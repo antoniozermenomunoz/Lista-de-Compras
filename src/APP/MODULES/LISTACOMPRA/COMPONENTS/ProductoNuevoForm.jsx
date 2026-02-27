@@ -51,17 +51,6 @@ function ProductoNuevoForm({
 
         <div className="card-body">
           <div className="mb-3">
-            <label className="form-label">ID</label>
-            <input
-              name="id"
-              value={NuevoProducto.id}
-              onChange={Cambios}
-              className="form-control"
-              placeholder="Ingrese el ID"
-            />
-          </div>
-
-          <div className="mb-3">
             <label className="form-label">Producto</label>
             <input
               name="producto"

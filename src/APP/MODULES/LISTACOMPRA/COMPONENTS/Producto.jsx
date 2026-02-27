@@ -1,5 +1,4 @@
 function Producto(propiedades) {
-  console.log(propiedades);
   return (
     <li
       className={`list-group-item d-flex justify-content-between align-items-center ${
@@ -7,11 +6,9 @@ function Producto(propiedades) {
       }`}
     >
       <div>
-        <h6 className="mb-1 fw-bold">
-          #{propiedades.id} - {propiedades.producto}
-        </h6>
+        <h6 className="mb-1 fw-bold">{propiedades.producto}</h6>
         <small className="d-block">Cantidad: {propiedades.cantidad}</small>
-        <small>Estado: {propiedades.estatus ? "Activo" : "Pendiente"}</small>
+        <small>Estado: {propiedades.estatus ? "Terminado" : "Pendiente"}</small>
       </div>
       <div className="btn-group">
         <button

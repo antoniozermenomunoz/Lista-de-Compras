@@ -9,7 +9,6 @@ function UseListaCompra() {
 
   const [Buscar, SetBuscar] = React.useState("");
   const [AbrirNuevo, SetAbrirNuevo] = React.useState(false);
-  const [AbrirEditar, SetAbrirEditar] = React.useState(false);
 
   const ProductosFiltro = !Buscar
     ? Productos
@@ -20,6 +19,7 @@ function UseListaCompra() {
   const AgregarProducto = (NuevoProducto) => {
     const Producto = [...Productos];
     Producto.push({
+      id: crypto.randomUUID(),
       ...NuevoProducto,
       estatus: false,
     });
@@ -46,7 +46,7 @@ function UseListaCompra() {
     const index = Productos.findIndex((p) => p.id === id);
     if (index === -1) return;
     const nuevosProductos = [...Productos];
-    nuevosProductos[index].estatus = true;
+    nuevosProductos[index].estatus = !nuevosProductos[index].estatus;
     GuardarProducto(nuevosProductos);
   };
 
